@@ -33,7 +33,6 @@
       overflow-x: hidden;
     }
 
-    /* HEADER */
     header {
       background: linear-gradient(135deg, var(--primary), #a27b5c);
       color: white;
@@ -54,7 +53,6 @@
       opacity: 0.95;
     }
 
-    /* NAVBAR */
     nav {
       position: sticky;
       top: 0;
@@ -87,7 +85,6 @@
       color: white;
     }
 
-    /* CONTAINER */
     .container {
       max-width: 1100px;
       margin: 0 auto;
@@ -129,7 +126,6 @@
       border-radius: 5px;
     }
 
-    /* HERO */
     .hero-section {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -158,7 +154,6 @@
       font-size: 1.3rem;
     }
 
-    /* GALLERY */
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -178,7 +173,6 @@
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
     }
 
-    /* HOBBIES */
     .hobby-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -199,7 +193,6 @@
       background: #8b5a3c;
     }
 
-    /* CAREER */
     .activity-list {
       list-style: none;
       padding: 0;
@@ -215,7 +208,6 @@
       box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
     }
 
-    /* CONTACT */
     .contact-info {
       display: grid;
       gap: 1rem;
@@ -246,25 +238,16 @@
       margin-top: 3rem;
     }
 
-    /* ANIMATIONS */
     @keyframes fadeDown {
       from { opacity: 0; transform: translateY(-30px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
     @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      nav ul {
-        gap: 0.8rem;
-      }
-      .hero-image {
-        height: 300px;
-      }
-      section {
-        padding: 1.5rem;
-      }
+      header h1 { font-size: 2rem; }
+      nav ul { gap: 0.8rem; }
+      .hero-image { height: 300px; }
+      section { padding: 1.5rem; }
     }
   </style>
 </head>
@@ -339,6 +322,10 @@
           <h3>📚 School</h3>
           <p>Madhabdi S. P. Institution</p>
         </div>
+        <img src="3.jpg" class="gallery-item" alt="University life">
+        <img src="4.jpg" class="gallery-item" alt="College days">
+        <img src="5.jpg" class="gallery-item" alt="School memories">
+        <img src="6.jpg" class="gallery-item" alt="Friends and campus">
       </div>
     </section>
 
@@ -357,6 +344,7 @@
         <div class="hobby-card"><h3>🎵 Music</h3><p>Relaxing through melodies</p></div>
         <div class="hobby-card"><h3>✈️ Travelling</h3><p>Exploring new cultures</p></div>
       </div>
+      <img src="11.jpg" alt="Hobby image" class="gallery-item" style="margin-top:1.5rem; display:block; width:100%; max-width:800px; margin-left:auto; margin-right:auto;">
     </section>
 
     <section id="career">
@@ -385,14 +373,12 @@
   </footer>
 
   <script>
-    // Fade-in effect on scroll
     const sections = document.querySelectorAll("section");
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add("visible");
       });
     }, { threshold: 0.15 });
-
     sections.forEach(section => observer.observe(section));
   </script>
 </body>
