@@ -1,475 +1,399 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rumaiya Rahaman Mishu - Nutrition & Food Engineering Student</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #ffffff;
-        }
-        
-        header {
-            background: #6F4E37;
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
-        }
-        
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            animation: fadeInDown 1s ease;
-        }
-        
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            animation: fadeInUp 1s ease;
-        }
-        
-        nav {
-            background: white;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            border-bottom: 2px solid #000;
-        }
-        
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-        
-        nav a {
-            text-decoration: none;
-            color: #000;
-            font-weight: 600;
-            transition: all 0.3s;
-            padding: 0.5rem 1rem;
-            border-bottom: 2px solid transparent;
-        }
-        
-        nav a:hover {
-            border-bottom: 2px solid #000;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        
-        section {
-            background: white;
-            margin: 2rem 0;
-            padding: 2rem;
-            border: 2px solid #000;
-            animation: fadeIn 1s ease;
-        }
-        
-        h2 {
-            color: #000;
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
-            border-bottom: 3px solid #000;
-            padding-bottom: 0.5rem;
-        }
-        
-        .hero-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            align-items: center;
-            margin: 2rem 0;
-        }
-        
-        .hero-image {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border: 3px solid #000;
-        }
-        
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            align-items: start;
-        }
-        
-        .info-card {
-            background: #000;
-            color: white;
-            padding: 1.5rem;
-            margin: 1rem 0;
-        }
-        
-        .info-card h3 {
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-        
-        .education-item {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            margin: 1rem 0;
-            border-left: 4px solid #000;
-            transition: transform 0.3s;
-        }
-        
-        .education-item:hover {
-            transform: translateX(10px);
-        }
-        
-        .education-item h3 {
-            color: #000;
-            margin-bottom: 0.5rem;
-        }
-        
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-        
-        .gallery-item {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border: 3px solid #000;
-            transition: transform 0.3s;
-        }
-        
-        .gallery-item:hover {
-            transform: scale(1.05);
-        }
-        
-        .hobby-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-        
-        .hobby-card {
-            background: #000;
-            color: white;
-            padding: 2rem;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-        
-        .hobby-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .hobby-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .activity-list {
-            list-style: none;
-        }
-        
-        .activity-list li {
-            background: #f8f9fa;
-            padding: 1rem;
-            margin: 0.5rem 0;
-            border-left: 3px solid #000;
-        }
-        
-        .activity-list li strong {
-            color: #000;
-        }
-        
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        
-        .contact-item {
-            background: #000;
-            color: white;
-            padding: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            font-size: 1.1rem;
-        }
-        
-        .contact-item a {
-            color: white;
-            text-decoration: none;
-            border-bottom: 1px solid white;
-        }
-        
-        .contact-item a:hover {
-            opacity: 0.8;
-        }
-        
-        footer {
-            background: #000;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 2rem;
-        }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .hero-section,
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-            
-            header h1 {
-                font-size: 2rem;
-            }
-            
-            nav ul {
-                gap: 1rem;
-            }
-            
-            .gallery {
-                grid-template-columns: 1fr;
-            }
-            
-            .hobby-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rumaiya Rahaman Mishu - Nutrition & Food Engineering Student</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #6F4E37;
+      --secondary: #F2E9E4;
+      --accent: #EBD3C2;
+      --dark: #1C1C1C;
+      --light: #ffffff;
+      --radius: 1rem;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, var(--primary), #a27b5c);
+      color: white;
+      text-align: center;
+      padding: 5rem 1rem;
+      border-bottom: 4px solid #d7bca4;
+      animation: fadeDown 1.5s ease;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin-bottom: 0.8rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.95;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      padding: 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 600;
+      padding: 0.6rem 1rem;
+      border-radius: var(--radius);
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    section {
+      margin: 3rem 0;
+      padding: 2rem;
+      background: var(--secondary);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary);
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    h2::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: var(--primary);
+      margin: 0.5rem auto;
+      border-radius: 5px;
+    }
+
+    /* HERO */
+    .hero-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero-image {
+      width: 100%;
+      border-radius: var(--radius);
+      height: 400px;
+      object-fit: cover;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .info-card {
+      background: var(--primary);
+      color: white;
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .info-card h3 {
+      margin-bottom: 0.8rem;
+      font-size: 1.3rem;
+    }
+
+    /* GALLERY */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .gallery-item {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    /* HOBBIES */
+    .hobby-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .hobby-card {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .hobby-card:hover {
+      transform: translateY(-5px);
+      background: #8b5a3c;
+    }
+
+    /* CAREER */
+    .activity-list {
+      list-style: none;
+      padding: 0;
+      line-height: 1.8;
+    }
+
+    .activity-list li {
+      margin-bottom: 0.8rem;
+      background: white;
+      border-left: 4px solid var(--primary);
+      padding: 0.8rem 1rem;
+      border-radius: 0 0.5rem 0.5rem 0;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    /* CONTACT */
+    .contact-info {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .contact-item {
+      background: var(--primary);
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .contact-item a {
+      color: white;
+      text-decoration: underline;
+    }
+
+    footer {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.95rem;
+      margin-top: 3rem;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      nav ul {
+        gap: 0.8rem;
+      }
+      .hero-image {
+        height: 300px;
+      }
+      section {
+        padding: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Rumaiya Rahaman Mishu</h1>
-        <p>Nutrition & Food Engineering Student | Aspiring Clinical Nutritionist</p>
-    </header>
-    
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#future">Future Goals</a></li>
-            <li><a href="#hobbies">Hobbies</a></li>
-            <li><a href="#career">Career Activities</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-    
-    <div class="container">
-        <section id="about">
-            <div class="hero-section">
-                <div>
-                    <h2>About Me</h2>
-                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1rem;">
-                        Hello! I'm Rumaiya Rahaman Mishu, a 22-year-old nutrition enthusiast from Narsingdi. 
-                        Currently, I'm in my 6th semester studying Nutrition and Food Engineering at 
-                        Daffodil International University.
-                    </p>
-                    <p style="font-size: 1.1rem; line-height: 1.8;">
-                        I'm passionate about promoting healthy eating habits and improving the quality of life 
-                        through proper nutrition. I believe that nutrition is the key to maintaining a healthy 
-                        life and building a better society.
-                    </p>
-                </div>
-                <img src="1.jpg" alt="Rumaiya in lab" class="hero-image">
-            </div>
-            
-            <div class="about-content">
-                <div>
-                    <div class="info-card">
-                        <h3>Personal Details</h3>
-                        <p><strong>Age:</strong> 22 years old</p>
-                        <p><strong>From:</strong> Narsingdi</p>
-                        <p><strong>University:</strong> Daffodil International University</p>
-                        <p><strong>Current Semester:</strong> 6th Semester</p>
-                    </div>
-                </div>
-                <div>
-                    <div class="info-card">
-                        <h3>Family</h3>
-                        <p>Our family consists of 5 members. My father is a businessman and my mother is a housewife. We are 2 sisters and 1 brother.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="gallery">
-            <h2>My Journey</h2>
-            <div class="gallery">
-                <img src="3.jpg" alt="Professional photo" class="gallery-item">
-                <img src="2.jpg" alt="Cultural day" class="gallery-item">
-                <img src="10.jpg" alt="Outdoor photoshoot" class="gallery-item">
-                <img src="7.jpg" alt="Gardening hobby" class="gallery-item">
-                <img src="11.jpg" alt="Cooking passion" class="gallery-item">
-                <img src="8.jpg" alt="Group photo" class="gallery-item">
-            </div>
-        </section>
-        
-      <section id="education">
-    <h2>Educational Background</h2>
-    <p style="max-width: 800px; margin-bottom: 1.5rem;">
-        My academic journey reflects a strong commitment to learning and personal growth. 
-        From building a solid foundation in school to pursuing higher education at Daffodil International University, 
-        I have continuously focused on developing both theoretical knowledge and practical skills in my field.
-    </p>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
-        <div>
-            <div class="education-item">
-                <h3>🎓 University</h3>
-                <p><strong>Daffodil International University</strong></p>
-                <p>B.Sc. in Nutrition and Food Engineering (6th Semester)</p>
-            </div>
-            <div class="education-item">
-                <h3>🏫 College</h3>
-                <p><strong>Narsingdi Model College</strong></p>
-            </div>
-            <div class="education-item">
-                <h3>📚 School</h3>
-                <p><strong>Madhabdi S. P. Institution</strong></p>
-            </div>
-        </div>
-        <div class="gallery">
-            <img src="3.jpg" alt="DIU Building" class="gallery-item">
-            <img src="4.jpg" alt="DIU Campus" class="gallery-item">
-            <img src="5.jpg" alt="DIU View" class="gallery-item">
-            <img src="6.jpg" alt="DIU Building Exterior" class="gallery-item">
-        </div>
-    </div>
-</section>
+  <header>
+    <h1>Rumaiya Rahaman Mishu</h1>
+    <p>Nutrition & Food Engineering Student | Aspiring Clinical Nutritionist</p>
+  </header>
 
-        
-        <section id="future">
-            <h2>Future Goals & Vision</h2>
-            <div style="background: #f8f9fa; padding: 2rem; border-left: 4px solid #000;">
-                <h3 style="color: #000; margin-bottom: 1rem; font-size: 1.5rem;">Aspiring Clinical Nutritionist</h3>
-                <p style="font-size: 1.1rem; line-height: 1.8;">
-                    In the future, I want to be a clinical nutritionist where I can work with individuals and 
-                    communities to promote healthy eating habits and improve quality of life. I believe that 
-                    proper nutrition is a key way to maintain a healthy life and make a better society.
-                </p>
-            </div>
-        </section>
-        
-        <section id="hobbies">
-            <h2>Hobbies & Interests</h2>
-            <div class="hobby-grid">
-                <div class="hobby-card">
-                    <h3>🌱 Gardening</h3>
-                    <p>Growing plants and connecting with nature</p>
-                </div>
-                <div class="hobby-card">
-                    <h3>🍳 Cooking</h3>
-                    <p>Creating healthy and delicious meals</p>
-                </div>
-                <div class="hobby-card">
-                    <h3>🎵 Music</h3>
-                    <p>Listening to music for relaxation</p>
-                </div>
-                <div class="hobby-card">
-                    <h3>✈️ Travelling</h3>
-                    <p>Exploring new places and cultures</p>
-                </div>
-            </div>
-        </section>
-        
-        <section id="career">
-            <h2>Career Mapping Related Activities</h2>
-            <ul class="activity-list">
-                <li>
-                    <strong>Career Counseling:</strong> Guidance on career paths in nutrition, public health, and the food industry.
-                </li>
-                <li>
-                    <strong>Workshops:</strong> Skill development in communication, leadership, and teamwork.
-                </li>
-                <li>
-                    <strong>Internships:</strong> Hands-on experience in hospitals, food industries, NGOs, and research centers.
-                </li>
-                <li>
-                    <strong>CV & Interview Training:</strong> Sessions on professional CV writing and interview techniques.
-                </li>
-                <li>
-                    <strong>Industry Visits:</strong> Exposure to real-world industry practices and expert insights.
-                </li>
-            </ul>
-        </section>
-        
-        <section id="contact">
-            <h2>Get In Touch</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <span style="font-size: 1.5rem;">📞</span>
-                    <div>
-                        <strong>Phone:</strong><br>
-                        <a href="tel:01890325143">01890325143</a>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <span style="font-size: 1.5rem;">✉️</span>
-                    <div>
-                        <strong>Email:</strong><br>
-                        <a href="mailto:mishu2307121071@diu.edu.bd">mishu2307121071@diu.edu.bd</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-    
-    <footer>
-        <p>&copy; 2025 Rumaiya Rahaman Mishu. All rights reserved.</p>
-        <p>Building a healthier tomorrow through nutrition and care 🌱</p>
-    </footer>
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#future">Future</a></li>
+      <li><a href="#hobbies">Hobbies</a></li>
+      <li><a href="#career">Career</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="hero-section">
+        <div>
+          <p>Hello! I'm <strong>Rumaiya Rahaman Mishu</strong>, a 22-year-old nutrition enthusiast from Narsingdi, currently pursuing my 6th semester in Nutrition and Food Engineering at Daffodil International University.</p>
+          <p>I’m passionate about promoting healthy eating habits and improving community health through balanced nutrition and awareness.</p>
+        </div>
+        <img src="1.jpg" alt="Rumaiya in lab" class="hero-image">
+      </div>
+      <div class="hero-section" style="margin-top:2rem;">
+        <div class="info-card">
+          <h3>Personal Details</h3>
+          <p><strong>Age:</strong> 22</p>
+          <p><strong>From:</strong> Narsingdi</p>
+          <p><strong>University:</strong> Daffodil International University</p>
+          <p><strong>Semester:</strong> 6th</p>
+        </div>
+        <div class="info-card">
+          <h3>Family</h3>
+          <p>We are five members in our family — my father (businessman), mother (homemaker), one brother, and two sisters.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <h2>My Journey</h2>
+      <div class="gallery">
+        <img src="3.jpg" class="gallery-item" alt="Gallery 1">
+        <img src="2.jpg" class="gallery-item" alt="Gallery 2">
+        <img src="10.jpg" class="gallery-item" alt="Gallery 3">
+        <img src="7.jpg" class="gallery-item" alt="Gallery 4">
+        <img src="11.jpg" class="gallery-item" alt="Gallery 5">
+        <img src="8.jpg" class="gallery-item" alt="Gallery 6">
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Educational Background</h2>
+      <div class="gallery">
+        <div class="info-card">
+          <h3>🎓 University</h3>
+          <p><strong>Daffodil International University</strong></p>
+          <p>B.Sc. in Nutrition & Food Engineering (6th Semester)</p>
+        </div>
+        <div class="info-card">
+          <h3>🏫 College</h3>
+          <p>Narsingdi Model College</p>
+        </div>
+        <div class="info-card">
+          <h3>📚 School</h3>
+          <p>Madhabdi S. P. Institution</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="future">
+      <h2>Future Goals & Vision</h2>
+      <p style="text-align:center; max-width:800px; margin:0 auto;">
+        My dream is to become a <strong>Clinical Nutritionist</strong> — guiding individuals toward healthier lifestyles through evidence-based nutrition and personalized diet planning.
+      </p>
+    </section>
+
+    <section id="hobbies">
+      <h2>Hobbies & Interests</h2>
+      <div class="hobby-grid">
+        <div class="hobby-card"><h3>🌱 Gardening</h3><p>Connecting with nature</p></div>
+        <div class="hobby-card"><h3>🍳 Cooking</h3><p>Creating healthy meals</p></div>
+        <div class="hobby-card"><h3>🎵 Music</h3><p>Relaxing through melodies</p></div>
+        <div class="hobby-card"><h3>✈️ Travelling</h3><p>Exploring new cultures</p></div>
+      </div>
+    </section>
+
+    <section id="career">
+      <h2>Career Mapping Activities</h2>
+      <ul class="activity-list">
+        <li><strong>Career Counseling:</strong> Guidance on nutrition-related paths.</li>
+        <li><strong>Workshops:</strong> Communication and leadership development.</li>
+        <li><strong>Internships:</strong> Experience in hospitals and food industries.</li>
+        <li><strong>CV Training:</strong> Resume and interview preparation.</li>
+        <li><strong>Industry Visits:</strong> Learning from professional nutritionists.</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Get In Touch</h2>
+      <div class="contact-info">
+        <div class="contact-item">📞 <div><strong>Phone:</strong> <a href="tel:01890325143">01890325143</a></div></div>
+        <div class="contact-item">✉️ <div><strong>Email:</strong> <a href="mailto:mishu2307121071@diu.edu.bd">mishu2307121071@diu.edu.bd</a></div></div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Rumaiya Rahaman Mishu. All rights reserved.</p>
+    <p>Building a healthier tomorrow through nutrition 🌿</p>
+  </footer>
+
+  <script>
+    // Fade-in effect on scroll
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    }, { threshold: 0.15 });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
 </body>
 </html>
